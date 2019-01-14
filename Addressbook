@@ -1,0 +1,47 @@
+public class ArrayAdressBook1 {
+    private Person[] persons;
+
+    private int nextFreeIndex;// personenschondrin
+
+    ArrayAdressBook1(int initialCapacity) {
+
+        if (initialCapacity < 1) {
+            initialCapacity = 1;
+        }
+        this.persons = new Person[initialCapacity];
+
+    }
+
+    void addPerson(Person p) {
+        if (nextFreeIndex >= persons.length) {
+            increaseCapacity();
+        }
+
+        persons[nextFreeIndex] = p;
+        nextFreeIndex++;
+
+    }
+
+    private void increaseCapacity() {
+        Person[] newpersons;
+
+        newpersons = new Person[persons.length * 2];
+        // for (int j = 0; j < persons.length; j++) {
+        // newpersons[j] = persons[j];
+        // }
+        System.arraycopy(persons, 0, newpersons, 0, persons.length);
+
+        persons = newpersons;
+
+    }
+
+    void print() {
+
+        System.out.println("Anzahl Einträge: " + nextFreeIndex);
+        System.out.println("Eintragskapazität: " + persons.length);
+        for (int i = 0; i < nextFreeIndex; i = i + 1) {
+            persons[i].print();
+
+        }
+    }
+}
