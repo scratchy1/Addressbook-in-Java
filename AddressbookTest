@@ -1,0 +1,20 @@
+public class AddressBookTest {
+
+    public static void main(String[] args) {
+        // erzeugen ein ArrayAddressBook mit Anfangsgröße 3.
+        ArrayAdressBook1 addressbook = new ArrayAdressBook1(3);
+
+        // Person-Objekte erzeugen.
+        //  Person-Objekte ins Adressbuch reinzwirbeln.
+
+        addressbook.addPerson(new Person("Silversurfer", 19831007));
+        addressbook.addPerson(new Person("Geilo", 19831007));
+        addressbook.addPerson(new Person("Hulk", 19831007));
+        addressbook.addPerson(new Student("Planck", 18580423, 3454545, 47));
+
+        // an geeigneter Stelle schauen, ob Verdopplung funktioniert.
+
+        addressbook.print();
+
+    }
+}
